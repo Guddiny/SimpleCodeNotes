@@ -8,11 +8,11 @@
     Title="SimpleCodeNotes.Ui"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    Background="{DynamicResource Gray-1}"
+    
     FontFamily="Consolas"
     mc:Ignorable="d">
     <Grid ColumnDefinitions="300, 1, *">
-        <Border Grid.Column="0" Background="{DynamicResource Gray-2}">
+        <Border Grid.Column="0" Background="{DynamicResource White}">
             <Grid RowDefinitions="Auto,*, Auto">
 
                 <StackPanel
@@ -39,26 +39,29 @@
                     <!-- </Border> -->
 
                     <TextBox Watermark="Filter" />
-                    <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">Add note</Button>
+                    <Button HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Center">
+                        Add note
+                    </Button>
                 </StackPanel>
 
                 <ListBox
                     Grid.Row="1"
-                    Foreground="{DynamicResource Gray-4}"
+                    Foreground="{DynamicResource Gray-3}"
                     Items="{Binding Notes}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Vertical">
-                                <TextBlock Text="Header" FontWeight="ExtraBold"/>
+                                <TextBlock Text="Header" FontWeight="ExtraBold" />
                                 <TextBlock Text="Description"
                                            FontSize="11"
-                                           Foreground="{DynamicResource Gray-4}" />
+                                           Foreground="{DynamicResource Gray-3}" />
                                 <Border BorderThickness="1"
-                                        BorderBrush="{DynamicResource Gray-3}" 
+                                        BorderBrush="{DynamicResource Gray-3}"
                                         Padding="5 3"
                                         CornerRadius="8"
                                         HorizontalAlignment="Left">
-                                    <TextBlock> C# </TextBlock>
+                                    <TextBlock FontSize="10"> YAML </TextBlock>
                                 </Border>
                             </StackPanel>
                         </DataTemplate>
@@ -91,10 +94,10 @@
             Background="{DynamicResource Gray-3}" />
 
         <avalonEdit:TextEditor
+            Background="{DynamicResource Gray-1}"
             Name="Editor"
             Grid.Column="2"
             ShowLineNumbers="True"
-            Margin="5"
             FontFamily="Consolas,Menlo,Monospace"
             FontSize="14"
             FontWeight="Light"
