@@ -1,4 +1,5 @@
-﻿using Avalonia.Controls;
+﻿using System.Collections.ObjectModel;
+using Avalonia.Controls;
 
 namespace SimpleCodeNotes.Ui
 {
@@ -7,6 +8,9 @@ namespace SimpleCodeNotes.Ui
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
         }
+
+        public ObservableCollection<string> Notes { get; set; } = new() { "1", "2" };
     }
 }
