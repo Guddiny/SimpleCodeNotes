@@ -24,9 +24,6 @@ namespace SimpleCodeNotes.Ui
             DataContext = this;
 
             _textEditor = this.FindControl<TextEditor>("Editor");
-            _textEditor.Background = Brushes.Transparent;
-            _textEditor.ShowLineNumbers = true;
-            _textEditor.TextArea.Background = this.Background;
             _textEditor.Options.ShowBoxForControlCharacters = true;
             _textEditor.TextArea.IndentationStrategy = new CSharpIndentationStrategy(_textEditor.Options);
             _textEditor.TextArea.RightClickMovesCaret = true;
@@ -35,8 +32,8 @@ namespace SimpleCodeNotes.Ui
                 (ThemeName)_currentTheme);
 
             _textMateInstallation = _textEditor.InstallTextMate(_registryOptions);
-            Language csharpLanguage = _registryOptions.GetLanguageByExtension(".cs");
-            string scopeName = _registryOptions.GetScopeByLanguageId(csharpLanguage.Id);
+
+            var csharpLanguage = _registryOptions.GetLanguageByExtension(".cs");
             _textMateInstallation.SetGrammar(_registryOptions.GetScopeByLanguageId(csharpLanguage.Id));
 
             _textEditor.Document = new TextDocument("Text");
