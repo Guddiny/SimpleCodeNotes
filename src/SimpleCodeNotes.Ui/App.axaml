@@ -6,6 +6,7 @@
 		<Style Selector="MenuItem /template/ Popup#PART_Popup > Border">
 			<Setter Property="Border.Background" Value="Red"></Setter>
 		</Style>
+		<StyleInclude Source="avares://AvaloniaEdit/AvaloniaEdit.xaml" />
 		<!--<StyleInclude Source="avares://Avalonia.Themes.Fluent/DensityStyles/Compact.xaml" />-->
 	</Application.Styles>
 

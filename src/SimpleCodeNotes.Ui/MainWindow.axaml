@@ -5,6 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SimpleCodeNotes.Ui.MainWindow"
         Title="SimpleCodeNotes.Ui"
+		xmlns:AvalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
 		Background="{DynamicResource DarkGray}">
 	<Grid ColumnDefinitions="300, 1, *">
 		<Border Grid.Column="0"
@@ -57,5 +58,15 @@
 		<GridSplitter Grid.Column="1"
 					  Background="{DynamicResource LightGray}"
 					  MinWidth="1"/>
+
+		<AvalonEdit:TextEditor Name="Editor"
+							   Grid.Column="2"
+                               FontFamily="Consolas,Menlo,Monospace"
+                               Margin="5"
+                               Foreground="#D4D4D4"
+                               HorizontalScrollBarVisibility="Auto"
+                               VerticalScrollBarVisibility="Visible"
+                               FontWeight="Light"
+                               FontSize="14" />
 	</Grid>
 </Window>
