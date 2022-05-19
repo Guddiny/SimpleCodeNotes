@@ -16,7 +16,7 @@ namespace SimpleCodeNotes.Ui
         private readonly TextEditor _textEditor;
         private readonly TextMate.Installation _textMateInstallation;
         private RegistryOptions _registryOptions;
-        private int _currentTheme = (int)ThemeName.DarkPlus;
+        private int _currentTheme = (int)ThemeName.LightPlus;
 
         public MainWindow()
         {
@@ -25,6 +25,10 @@ namespace SimpleCodeNotes.Ui
 
             _textEditor = this.FindControl<TextEditor>("Editor");
             _textEditor.Options.ShowBoxForControlCharacters = true;
+            _textEditor.Options.ShowSpaces = true;
+            _textEditor.Options.ShowTabs = true;
+            _textEditor.Options.EnableHyperlinks = true;
+            _textEditor.Options.ConvertTabsToSpaces = true;
             _textEditor.TextArea.IndentationStrategy = new CSharpIndentationStrategy(_textEditor.Options);
             _textEditor.TextArea.RightClickMovesCaret = true;
 

@@ -8,11 +8,10 @@
     Title="SimpleCodeNotes.Ui"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    
     FontFamily="Consolas"
     mc:Ignorable="d">
     <Grid ColumnDefinitions="300, 1, *">
-        <Border Grid.Column="0" Background="{DynamicResource White}">
+        <Border Grid.Column="0" Background="#fff2f2f2">
             <Grid RowDefinitions="Auto,*, Auto">
 
                 <StackPanel
@@ -57,11 +56,8 @@
                                            FontSize="11"
                                            Foreground="{DynamicResource Gray-3}" />
                                 <Border BorderThickness="1"
-                                        BorderBrush="{DynamicResource Gray-3}"
-                                        Padding="5 3"
-                                        CornerRadius="8"
                                         HorizontalAlignment="Left">
-                                    <TextBlock FontSize="10"> YAML </TextBlock>
+                                    <TextBlock FontSize="10" Foreground="DarkBlue"> YAML </TextBlock>
                                 </Border>
                             </StackPanel>
                         </DataTemplate>
@@ -71,7 +67,7 @@
 
                 <Border
                     Grid.Row="2"
-                    BorderBrush="{DynamicResource Gray-3}"
+                    BorderBrush="{DynamicResource Gray-4}"
                     BorderThickness="0,1,0,0">
                     <StackPanel
                         Background="{DynamicResource Gray}"
@@ -88,21 +84,57 @@
                 </Border>
             </Grid>
         </Border>
+
         <GridSplitter
             Grid.Column="1"
             MinWidth="1"
-            Background="{DynamicResource Gray-3}" />
+            Background="{DynamicResource Gray-4}" />
+        
+        <Grid Grid.Column="2"
+              RowDefinitions="Auto, *">
+            
+            <Border 
+                Grid.Row="0"
+                Padding="2"
+                BorderThickness="0 1 0 1"
+                BorderBrush="{DynamicResource Gray-4}">
+                <Grid 
+                    ColumnDefinitions="*, Auto">
+                    <TextBlock 
+                        Grid.Column="0"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Text="Header"
+                        VerticalAlignment="Center"/>
+                    <StackPanel 
+                        Grid.Column="1"
+                        Orientation="Horizontal"
+                        Spacing="5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <ComboBox Height="28">
+                            <ComboBoxItem>JSON</ComboBoxItem>
+                            <ComboBoxItem>java</ComboBoxItem>
+                        </ComboBox>
+                        <Button>Save</Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        
+            
+            <avalonEdit:TextEditor
+                Background="{DynamicResource White}"
+                Name="Editor"
+                Grid.Row="1"
+                ShowLineNumbers="True"
+                FontFamily="Consolas,Menlo,Monospace"
+                FontSize="14"
+                Margin="10 0 0 0"
+                FontWeight="Normal"
+                HorizontalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Visible" />
+        </Grid>
 
-        <avalonEdit:TextEditor
-            Background="{DynamicResource Gray-1}"
-            Name="Editor"
-            Grid.Column="2"
-            ShowLineNumbers="True"
-            FontFamily="Consolas,Menlo,Monospace"
-            FontSize="14"
-            FontWeight="Light"
-            Foreground="#D4D4D4"
-            HorizontalScrollBarVisibility="Auto"
-            VerticalScrollBarVisibility="Visible" />
+       
     </Grid>
 </Window>
