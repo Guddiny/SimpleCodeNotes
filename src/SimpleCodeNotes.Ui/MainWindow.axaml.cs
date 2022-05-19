@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.Media;
 using AvaloniaEdit;
 using AvaloniaEdit.Document;
@@ -38,6 +40,27 @@ namespace SimpleCodeNotes.Ui
             _textMateInstallation.SetGrammar(_registryOptions.GetScopeByLanguageId(csharpLanguage.Id));
 
             _textEditor.Document = new TextDocument("Text");
+
+            this.AddHandler(
+                PointerWheelChangedEvent,
+                (o, i) =>
+                {
+                    if (i.KeyModifiers != KeyModifiers.Control)
+                    {
+                        return;
+                    }
+
+                    if (i.Delta.Y > 0)
+                    {
+                        _textEditor.FontSize++;
+                    }
+                    else
+                    {
+                        _textEditor.FontSize = _textEditor.FontSize > 1 ? _textEditor.FontSize - 1 : 1;
+                    }
+                },
+                RoutingStrategies.Bubble,
+                true);
         }
 
         public ObservableCollection<string> Notes { get; set; } = new() { "1", "2" };
