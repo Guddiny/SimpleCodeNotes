@@ -36,7 +36,7 @@ public partial class MainWindow : Window
 
         _textMateInstallation = _textEditor.InstallTextMate(_registryOptions);
 
-        var csharpLanguage = _registryOptions.GetLanguageByExtension(".cs");
+        var csharpLanguage = _registryOptions.GetLanguageByExtension(".dockerfile");
         _textMateInstallation.SetGrammar(_registryOptions.GetScopeByLanguageId(csharpLanguage.Id));
 
         _textEditor.Document = new TextDocument(" ");
@@ -48,7 +48,7 @@ public partial class MainWindow : Window
 
     private void AddMouseZoom()
     {
-        this.AddHandler(
+        AddHandler(
             PointerWheelChangedEvent,
             (o, i) =>
             {
