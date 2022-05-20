@@ -1,9 +1,10 @@
 ﻿using Avalonia;
+using Avalonia.ReactiveUI;
 using System;
 
 namespace SimpleCodeNotes.Ui;
 
-internal class Program
+internal static class Program
 {
     [STAThread]
     public static void Main(string[] args) => BuildAvaloniaApp()
@@ -12,5 +13,6 @@ internal class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
+            .UseReactiveUI()
             .LogToTrace();
 }

@@ -20,7 +20,6 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        DataContext = this;
 
         _textEditor = this.FindControl<TextEditor>("Editor");
         _textEditor.Options.ShowBoxForControlCharacters = true;

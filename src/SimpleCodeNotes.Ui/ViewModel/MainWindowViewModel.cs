@@ -1,5 +1,9 @@
-﻿namespace SimpleCodeNotes.Ui.ViewModel;
+﻿using ReactiveUI;
+using System.Collections.ObjectModel;
 
-public class MainWindowViewModel
+namespace SimpleCodeNotes.Ui.ViewModel;
+
+public class MainWindowViewModel : ReactiveObject
 {
+    public ObservableCollection<string> Notes { get; set; } = new();
 }
