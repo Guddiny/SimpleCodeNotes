@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace SimpleCodeNotes.DataAccess.Repositories;
 
-namespace SimpleCodeNotes.DataAccess.Repositories
+public interface ICodeNoteRepository
 {
-    public interface ICodeNoteRepository
-    {
-    }
 }
