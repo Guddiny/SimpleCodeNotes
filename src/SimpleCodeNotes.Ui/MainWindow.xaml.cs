@@ -14,8 +14,8 @@ public partial class MainWindow : Window
 {
     private readonly TextEditor _textEditor;
     private readonly TextMate.Installation _textMateInstallation;
-    private RegistryOptions _registryOptions;
-    private int _currentTheme = (int)ThemeName.LightPlus;
+    private readonly RegistryOptions _registryOptions;
+    private readonly int _currentTheme = (int)ThemeName.LightPlus;
 
     public MainWindow()
     {
@@ -39,8 +39,15 @@ public partial class MainWindow : Window
         var csharpLanguage = _registryOptions.GetLanguageByExtension(".cs");
         _textMateInstallation.SetGrammar(_registryOptions.GetScopeByLanguageId(csharpLanguage.Id));
 
-        _textEditor.Document = new TextDocument("Text");
+        _textEditor.Document = new TextDocument(" ");
 
+        AddMouseZoom();
+    }
+
+    public ObservableCollection<string> Notes { get; set; } = new() { "1", "2" };
+
+    private void AddMouseZoom()
+    {
         this.AddHandler(
             PointerWheelChangedEvent,
             (o, i) =>
@@ -62,6 +69,4 @@ public partial class MainWindow : Window
             RoutingStrategies.Bubble,
             true);
     }
-
-    public ObservableCollection<string> Notes { get; set; } = new() { "1", "2" };
 }

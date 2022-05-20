@@ -2,7 +2,5 @@
 
 public class AppSettings
 {
-    public string DatabasePath { get; set; } = string.Empty;
-
-    public string DatabasePassword { get; set; } = string.Empty;
+    public DatabaseSettings DatabaseSettings { get; set; } = new();
 }
