@@ -43,8 +43,6 @@ public partial class MainWindow : Window
         AddMouseZoom();
     }
 
-    public ObservableCollection<string> Notes { get; set; } = new() { "1", "2" };
-
     private void AddMouseZoom()
     {
         AddHandler(

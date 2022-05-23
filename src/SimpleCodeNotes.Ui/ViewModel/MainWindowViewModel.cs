@@ -1,10 +1,10 @@
-﻿using ReactiveUI;
+﻿using SimpleCodeNotes.Ui.Common;
 using SimpleCodeNotes.Ui.Settings;
 using System.Collections.ObjectModel;
 
 namespace SimpleCodeNotes.Ui.ViewModel;
 
-public class MainWindowViewModel : ReactiveObject
+public class MainWindowViewModel : BaseViewModel
 {
     public MainWindowViewModel(
         AppSettings appSettings)

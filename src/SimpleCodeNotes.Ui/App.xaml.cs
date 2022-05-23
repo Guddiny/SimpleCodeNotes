@@ -2,6 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
+using SimpleCodeNotes.Ui.Common;
 using SimpleCodeNotes.Ui.Services;
 using SimpleCodeNotes.Ui.Settings;
 using SimpleCodeNotes.Ui.ViewModel;
@@ -10,7 +11,19 @@ namespace SimpleCodeNotes.Ui;
 
 public partial class App : Application
 {
-    private ServiceProvider? ServiceProvider { get; set; }
+    public App()
+    {
+        var appSettings = AppSettingsService.LoadSettings() ?? new AppSettings();
+
+        ServiceProvider = new ServiceCollection()
+            .AddSingleton<AppSettings>(appSettings)
+            .AddSingleton<MainWindowViewModel>()
+            .BuildServiceProvider();
+
+        DataTemplates.Add(new ViewLocator());
+    }
+
+    private ServiceProvider ServiceProvider { get; set; }
 
     public override void Initialize()
     {
@@ -21,11 +34,6 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var services = new ServiceCollection();
-            var startup = new Startup();
-            startup.ConfigureServices(services);
-            ServiceProvider = services.BuildServiceProvider();
-
             desktop.MainWindow = new MainWindow
             {
                 DataContext = ServiceProvider.GetService<MainWindowViewModel>()
