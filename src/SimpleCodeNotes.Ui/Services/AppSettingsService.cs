@@ -19,9 +19,14 @@ public static class AppSettingsService
 
     public static AppSettings? LoadSettings(string filePath = SettingsFileName)
     {
-        var lines = File.ReadAllText(filePath);
-        var appSettings = JsonSerializer.Deserialize<AppSettings>(lines!);
+        if (File.Exists(filePath))
+        {
+            var lines = File.ReadAllText(filePath);
+            var appSettings = JsonSerializer.Deserialize<AppSettings>(lines!);
 
-        return appSettings;
+            return appSettings;
+        }
+
+        return null;
     }
 }
