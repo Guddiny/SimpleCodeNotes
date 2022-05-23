@@ -4,7 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:avalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:main="clr-namespace:SimpleCodeNotes.Ui.Pages.Main"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="{Binding AppSettings.WindowSettings.Title}"
     Width="{Binding AppSettings.WindowSettings.Width, Mode=TwoWay}"
@@ -14,7 +13,36 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
 
-    <main:MainView />
+    <Grid RowDefinitions="*">
+        <TabControl x:Name="Sidebar"
+                    Classes="sidebar">
+
+            <TabControl.Items>
+
+                <TabItem
+                    Content="{Binding NotesViewModel}" >
+                    <TabItem.Header>
+                        <PathIcon Data="{StaticResource note_regular}" />
+                    </TabItem.Header>
+                </TabItem>
+
+                <TabItem Header="2" >
+                    <TabItem.Header>
+                        <PathIcon Data="{StaticResource settings_regular}" />
+                    </TabItem.Header>
+                </TabItem>
+
+                <TabItem Content="{Binding InfoPage}"
+                             ToolTip.Tip="Info">
+                    <TabItem.Header>
+                        <PathIcon Data="{StaticResource info_regular}" />
+                    </TabItem.Header>
+                </TabItem>
+
+            </TabControl.Items>
+
+        </TabControl>
+    </Grid>
     <!--<Grid ColumnDefinitions="300, 1, *">
         <Border Grid.Column="0" Background="#fff2f2f2">
             <Grid RowDefinitions="Auto,*, Auto">

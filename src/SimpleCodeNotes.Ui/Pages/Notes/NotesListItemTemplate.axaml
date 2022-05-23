@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:notes="clr-namespace:SimpleCodeNotes.DataAccess.Entities;assembly=SimpleCodeNotes.DataAccess">
+
+    <DataTemplate x:Key="NotesListItemTemplate"
+                   DataType="{x:Type notes:Note}">
+
+        <Grid ColumnDefinitions="*,Auto"
+              Height="32"
+              Margin="10">
+
+            <StackPanel>
+                <TextBlock Text="{Binding Name}"
+                           TextTrimming="CharacterEllipsis"
+                           FontSize="12" />
+
+                <TextBlock Margin="0,5,0,0"
+                           TextTrimming="CharacterEllipsis"
+                           ToolTip.Tip="{Binding ServerOptions.Host}"
+                           FontSize="10"
+                           Foreground="LightGray"
+                           Classes="code_text"
+                           Text="Host" />
+            </StackPanel>
+
+            <!-- The Buttons -->
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        IsVisible="{Binding Path=IsPointerOver, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}">
+
+                <Button Classes="tool_bar_button"
+                        ToolTip.Tip="Delete item"
+                        Command="{Binding OwnerPage.Items.RemoveItem}"
+                        CommandParameter="{Binding .}">
+                    <PathIcon Data="{StaticResource delete_regular}" />
+                </Button>
+
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

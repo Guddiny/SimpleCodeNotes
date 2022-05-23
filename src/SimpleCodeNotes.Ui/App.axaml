@@ -15,6 +15,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="/Styles/Colors.axaml" />
+                <ResourceInclude Source="/Assets/VectorIcons.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -3,9 +3,9 @@ using Avalonia.Markup.Xaml;
 
 namespace SimpleCodeNotes.Ui.Pages.Notes;
 
-public partial class NotesView : UserControl
+public partial class NotesPageView : UserControl
 {
-    public NotesView()
+    public NotesPageView()
     {
         InitializeComponent();
     }

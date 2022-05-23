@@ -18,7 +18,7 @@ public partial class App : Application
         ServiceProvider = new ServiceCollection()
             .AddSingleton<AppSettings>(appSettings)
             .AddSingleton<MainWindowViewModel>()
-            .AddSingleton<NotesViewModel>()
+            .AddSingleton<NotesPageViewModel>()
             .BuildServiceProvider();
 
         DataTemplates.Add(new ViewLocator());

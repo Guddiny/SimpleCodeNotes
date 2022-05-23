@@ -37,9 +37,6 @@
     <AvaloniaXaml Update="MainWindow.axaml">
       <Generator>MSBuild:Compile</Generator>
     </AvaloniaXaml>
-    <AvaloniaXaml Update="Pages\Main\MainView.axaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaXaml>
     <AvaloniaXaml Update="Styles\Colors.axaml">
       <Generator>MSBuild:Compile</Generator>
     </AvaloniaXaml>
@@ -54,11 +51,20 @@
     <Compile Update="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\Notes\NotesPageView.axaml.cs">
+      <DependentUpon>NotesPageView.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="StyleCop.Analyzers" Version="1.2.0-beta.435">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>none</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Windows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleCodeNotes.DataAccess\SimpleCodeNotes.DataAccess.csproj" />
   </ItemGroup>
 </Project>
