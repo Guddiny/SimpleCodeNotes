@@ -2,9 +2,9 @@
 using SimpleCodeNotes.Ui.Settings;
 using System.Collections.ObjectModel;
 
-namespace SimpleCodeNotes.Ui.ViewModel;
+namespace SimpleCodeNotes.Ui;
 
-public class MainWindowViewModel : BaseViewModel
+public class MainWindowViewModel : ViewModelBase
 {
     public MainWindowViewModel(
         AppSettings appSettings)

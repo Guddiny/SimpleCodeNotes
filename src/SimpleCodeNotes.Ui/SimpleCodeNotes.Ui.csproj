@@ -9,20 +9,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove=".gitignore" />
-    <None Remove="App.xaml" />
-    <None Remove="MainWindow.xaml" />
-    <None Remove="Styles\Colors.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AvaloniaXaml Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaXaml>
-    <AvaloniaXaml Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaXaml>
-    <AvaloniaXaml Include="Styles\Colors.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaXaml>
   </ItemGroup>
   <ItemGroup>
     <!--This helps with theme dll-s trimming.
@@ -45,11 +31,28 @@
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaXaml Update="App.axaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaXaml>
+    <AvaloniaXaml Update="MainWindow.axaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaXaml>
+    <AvaloniaXaml Update="Pages\Main\MainView.axaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaXaml>
+    <AvaloniaXaml Update="Styles\Colors.axaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaXaml>
+    <AvaloniaXaml Update="Styles\Sidebar.axaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaXaml>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
+      <DependentUpon>App.axaml</DependentUpon>
     </Compile>
     <Compile Update="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <DependentUpon>MainWindow.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

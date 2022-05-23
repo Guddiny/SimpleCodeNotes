@@ -3,9 +3,9 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
 using SimpleCodeNotes.Ui.Common;
+using SimpleCodeNotes.Ui.Pages.Notes;
 using SimpleCodeNotes.Ui.Services;
 using SimpleCodeNotes.Ui.Settings;
-using SimpleCodeNotes.Ui.ViewModel;
 
 namespace SimpleCodeNotes.Ui;
 
@@ -18,6 +18,7 @@ public partial class App : Application
         ServiceProvider = new ServiceCollection()
             .AddSingleton<AppSettings>(appSettings)
             .AddSingleton<MainWindowViewModel>()
+            .AddSingleton<NotesViewModel>()
             .BuildServiceProvider();
 
         DataTemplates.Add(new ViewLocator());
