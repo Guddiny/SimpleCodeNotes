@@ -35,7 +35,7 @@
                         TextWrapping="NoWrap"/>
                     <Button
                         Grid.Column="1"
-                        IsVisible="{Binding !!#Filter.Text}">
+                        IsVisible="{Binding #Filter.Text, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
                         <PathIcon
                             Data="{StaticResource backspace_regular}" />
                     </Button>
