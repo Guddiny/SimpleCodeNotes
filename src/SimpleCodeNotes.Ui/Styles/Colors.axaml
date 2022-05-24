@@ -3,7 +3,17 @@
     <SolidColorBrush x:Key="Gray-2">#2c2c2c</SolidColorBrush>
     <SolidColorBrush x:Key="Gray-3">#515254</SolidColorBrush>
     <SolidColorBrush x:Key="Gray-4">#e3e3e3</SolidColorBrush>
+    <SolidColorBrush x:Key="Gray-5">#605e5c</SolidColorBrush>
+    <SolidColorBrush x:Key="Gray-6">#444444</SolidColorBrush>
+    <SolidColorBrush x:Key="Gray-7">#bebbb8</SolidColorBrush>
+    <SolidColorBrush x:Key="Gray-8">#666666</SolidColorBrush>
+    
+    
+    <SolidColorBrush x:Key="Black-1">Black</SolidColorBrush>
+    <SolidColorBrush x:Key="Black-2">#262626</SolidColorBrush>
+    <SolidColorBrush x:Key="Black-3">#212121</SolidColorBrush>
+    <SolidColorBrush x:Key="Black-4">#4a4647</SolidColorBrush>
+    
     <SolidColorBrush x:Key="Yellow">Yellow</SolidColorBrush>
     <SolidColorBrush x:Key="White">White</SolidColorBrush>
-    <SolidColorBrush x:Key="Black-1">Black</SolidColorBrush>
 </ResourceDictionary>

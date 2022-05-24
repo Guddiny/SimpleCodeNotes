@@ -31,10 +31,10 @@
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaXaml Update="App.axaml">
+    <AvaloniaXaml Update="App.aaxaml">
       <Generator>MSBuild:Compile</Generator>
     </AvaloniaXaml>
-    <AvaloniaXaml Update="MainWindow.axaml">
+    <AvaloniaXaml Update="MainWindow.aaxaml">
       <Generator>MSBuild:Compile</Generator>
     </AvaloniaXaml>
     <AvaloniaXaml Update="Styles\Colors.axaml">
@@ -45,11 +45,11 @@
     </AvaloniaXaml>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="App.xaml.cs">
-      <DependentUpon>App.axaml</DependentUpon>
+    <Compile Update="App.axaml.cs">
+      <DependentUpon>App.aaxaml</DependentUpon>
     </Compile>
-    <Compile Update="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.axaml</DependentUpon>
+    <Compile Update="MainWindow.axaml.cs">
+      <DependentUpon>MainWindow.aaxaml</DependentUpon>
     </Compile>
     <Compile Update="Pages\Notes\NotesPageView.axaml.cs">
       <DependentUpon>NotesPageView.axaml</DependentUpon>
