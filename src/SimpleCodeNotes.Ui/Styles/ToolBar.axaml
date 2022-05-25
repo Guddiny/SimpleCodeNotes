@@ -1,0 +1,34 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <ListBox Classes="notes_list">
+                <ListBoxItem>1asd</ListBoxItem>
+                <ListBoxItem>1asd</ListBoxItem>
+                <ListBoxItem>1asd</ListBoxItem>
+                <ListBoxItem>1asd</ListBoxItem>
+            </ListBox>
+        </Border>
+    </Design.PreviewWith>
+
+    <Style Selector="Button.tool_bar_button">
+        <Setter Property="Background"
+                Value="Transparent"/>
+        <Setter Property="MinWidth"
+                Value="0" />
+    </Style>
+
+    <Style Selector="Button.tool_bar_button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background"
+                Value="{DynamicResource Gray-1}"/>
+    </Style>
+
+    <Style Selector="Button.tool_bar_button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background"
+                Value="LightGray"/>
+    </Style>
+
+    <Style Selector="ListBox.notes_list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource Gray-2}"/>
+    </Style>
+</Styles>

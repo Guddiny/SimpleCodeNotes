@@ -11,14 +11,15 @@
 
             <StackPanel>
                 <TextBlock Text="{Binding Name}"
+                           Classes="code_text"
                            TextTrimming="CharacterEllipsis"
-                           FontSize="12" />
+                           FontSize="16" />
 
                 <TextBlock Margin="0,5,0,0"
                            TextTrimming="CharacterEllipsis"
                            ToolTip.Tip="{Binding ServerOptions.Host}"
-                           FontSize="10"
-                           Foreground="LightGray"
+                           FontSize="12"
+                           Foreground="{DynamicResource Gray-4}"
                            Classes="code_text"
                            Text="Host" />
             </StackPanel>

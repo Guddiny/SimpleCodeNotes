@@ -67,4 +67,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SimpleCodeNotes.DataAccess\SimpleCodeNotes.DataAccess.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Styles\ToolBar.axaml" />
+  </ItemGroup>
 </Project>

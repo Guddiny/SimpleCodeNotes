@@ -18,7 +18,7 @@
         <Setter Property="TabStripPlacement" Value="Left" />
         <Setter Property="Template">
             <ControlTemplate>
-                <Grid Background="{DynamicResource Black-2}">
+                <Grid Background="{DynamicResource Gray-1}">
                     <Grid ColumnDefinitions="Auto,Auto,*" RowDefinitions="*">
 
                         <!--  The container for the tab items  -->
@@ -33,7 +33,7 @@
                             Grid.Column="1"
                             Width="1"
                             VerticalAlignment="Stretch"
-                            Fill="{DynamicResource Black-1}" />
+                            Fill="{DynamicResource Gray-3}" />
 
                         <!--  The selected content  -->
                         <ContentPresenter
@@ -42,7 +42,7 @@
                             Grid.Column="2"
                             HorizontalContentAlignment="Stretch"
                             VerticalContentAlignment="Stretch"
-                            Background="{DynamicResource Black-3}"
+                            Background="{DynamicResource Gray-3}"
                             Content="{TemplateBinding SelectedContent}"
                             ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
                     </Grid>
@@ -68,7 +68,7 @@
     </Style>
 
     <Style Selector="TabControl.sidebar > TabItem:pointerover /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}" />
+        <Setter Property="Background" Value="{DynamicResource SystemAccent-1}" />
     </Style>
 
     <Style Selector="TabControl.sidebar > TabItem /template/ ContentPresenter#PART_ContentPresenter">
@@ -81,6 +81,6 @@
     </Style>
 
     <Style Selector="TabControl.sidebar > TabItem:selected /template/ Border#PART_LayoutRoot">
-        <Setter Property="Background" Value="{DynamicResource Black-4}" />
+        <Setter Property="Background" Value="{DynamicResource Gray-2}" />
     </Style>
 </Styles>

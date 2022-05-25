@@ -51,6 +51,7 @@
 
             <ListBox
                 Grid.Row="1"
+                Classes="notes_list"
                 Background="Transparent"
                 ItemTemplate="{StaticResource NotesListItemTemplate}"
                 Items="{Binding Notes}"
