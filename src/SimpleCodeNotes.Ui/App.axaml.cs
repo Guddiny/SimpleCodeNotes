@@ -2,6 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
+using SimpleCodeNotes.DataAccess;
 using SimpleCodeNotes.Ui.Common;
 using SimpleCodeNotes.Ui.Pages.Info;
 using SimpleCodeNotes.Ui.Pages.Notes;

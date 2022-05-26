@@ -1,5 +1,8 @@
-﻿namespace SimpleCodeNotes.DataAccess.Repositories;
+﻿using SimpleCodeNotes.DataAccess.Entities;
+
+namespace SimpleCodeNotes.DataAccess.Repositories;
 
 public interface ICodeNoteRepository
 {
+    List<Note> GetNotesList();
 }

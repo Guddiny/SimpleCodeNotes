@@ -31,4 +31,13 @@
     <Style Selector="ListBox.notes_list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource Gray-2}"/>
     </Style>
+
+    <Style Selector="ComboBox.tool_bar_combo_box">
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="Padding"
+                Value="10,0" />
+        <Setter Property="Margin"
+                Value="0" />
+    </Style>
 </Styles>
