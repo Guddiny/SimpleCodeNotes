@@ -9,7 +9,7 @@ using AvaloniaEdit.TextMate;
 using System.Collections.ObjectModel;
 using TextMateSharp.Grammars;
 
-namespace SimpleCodeNotes.Ui;
+namespace SimpleCodeNotes.Ui.Windows.Main;
 
 public partial class MainWindow : Window
 {

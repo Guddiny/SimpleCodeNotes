@@ -1,5 +1,5 @@
 <Window
-    x:Class="SimpleCodeNotes.Ui.MainWindow"
+    x:Class="SimpleCodeNotes.Ui.Windows.Main.MainWindow"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:avalonEdit="clr-namespace:AvaloniaEdit;assembly=AvaloniaEdit"

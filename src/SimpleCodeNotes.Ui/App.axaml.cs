@@ -8,6 +8,7 @@ using SimpleCodeNotes.Ui.Pages.Notes;
 using SimpleCodeNotes.Ui.Pages.Settings;
 using SimpleCodeNotes.Ui.Services;
 using SimpleCodeNotes.Ui.Settings;
+using SimpleCodeNotes.Ui.Windows.Main;
 
 namespace SimpleCodeNotes.Ui;
 

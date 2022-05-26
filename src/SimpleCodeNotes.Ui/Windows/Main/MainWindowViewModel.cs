@@ -4,7 +4,7 @@ using SimpleCodeNotes.Ui.Pages.Notes;
 using SimpleCodeNotes.Ui.Pages.Settings;
 using SimpleCodeNotes.Ui.Settings;
 
-namespace SimpleCodeNotes.Ui;
+namespace SimpleCodeNotes.Ui.Windows.Main;
 
 public class MainWindowViewModel : ViewModelBase
 {
