@@ -27,13 +27,14 @@
                     </TabItem.Header>
                 </TabItem>
 
-                <TabItem>
+                <TabItem
+                    Content="{Binding SettingsViewModel}">
                     <TabItem.Header>
                         <PathIcon Data="{StaticResource settings_regular}" />
                     </TabItem.Header>
                 </TabItem>
 
-                <TabItem Content="{Binding InfoPage}"
+                <TabItem Content="{Binding InfoViewModel}"
                          ToolTip.Tip="Info">
                     <TabItem.Header>
                         <PathIcon Data="{StaticResource info_regular}" />
