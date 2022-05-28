@@ -17,7 +17,7 @@ public class NotesPageViewModel : ViewModelBase
     public ReactiveCommand<Unit, Unit> Save { get; set; }
 
     public AvaloniaList<Note> Notes { get; set; } = new(Enumerable
-        .Range(1, 100)
+        .Range(1, 4)
         .Select(i => new Note
         {
             Name = "Namea sd+as a+sd+a s+d+ a+sd+ " + i,

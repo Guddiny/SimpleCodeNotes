@@ -78,7 +78,7 @@
 
         <Grid
             Grid.Column="2"
-            Margin="0 5 0 0"
+            Margin="0"
             RowDefinitions="Auto, *">
 
             <Grid
@@ -90,12 +90,14 @@
                 <StackPanel
                     Grid.Column="1"
                     Spacing="3"
-                    Orientation="Horizontal">
+                    Orientation="Horizontal"
+                    VerticalAlignment="Bottom">
                     <Label
                         Content="Format:"
                         VerticalContentAlignment="Center"/>
                     <ComboBox
-                        Classes="tool_bar_combo_box">
+                        Classes="tool_bar_combo_box"
+                        VerticalAlignment="Bottom">
                         <ComboBoxItem>JSON</ComboBoxItem>
                         <ComboBoxItem>YAML</ComboBoxItem>
                     </ComboBox>
@@ -110,7 +112,7 @@
             </Grid>
 
             <avalonEdit:TextEditor
-                Background="{DynamicResource White}"
+                Background="{DynamicResource Gray-7}"
                 Grid.Row="1"/>
 
             <!--<main:TextEditor Grid.Row="1"></main:TextEditor>-->

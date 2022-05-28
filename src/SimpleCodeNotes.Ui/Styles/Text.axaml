@@ -17,6 +17,11 @@
                 Value="Inconsolata,Consolas,Monospace,Courier" />
     </Style>
 
+    <Style Selector="Window">
+        <Setter Property="Foreground" Value="{DynamicResource MainFontColor}"/>
+        <Setter Property="FontFamily" Value="Inconsolata,Consolas,Monospace,Courier"/>
+    </Style>
+
     <Style Selector="TextBox">
         <Setter Property="SelectionBrush" Value="{DynamicResource SystemAccent-1}"/>
     </Style>

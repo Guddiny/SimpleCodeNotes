@@ -5,37 +5,41 @@
     <DataTemplate x:Key="NotesListItemTemplate"
                    DataType="{x:Type notes:Note}">
 
-        <Grid ColumnDefinitions="*,Auto"
+        <Border>
+            <Grid ColumnDefinitions="*,Auto"
               Height="32">
 
-            <StackPanel>
-                <TextBlock Text="{Binding Name}"
-                           Classes="code_text"
-                           TextTrimming="CharacterEllipsis"
-                           FontSize="16" />
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}"
+                               Classes="code_text"
+                               FontWeight="SemiBold"
+                               TextTrimming="CharacterEllipsis"
+                               FontSize="14" />
 
-                <TextBlock Margin="0,5,0,0"
-                           TextTrimming="CharacterEllipsis"
-                           ToolTip.Tip="{Binding ServerOptions.Host}"
-                           FontSize="12"
-                           Foreground="{DynamicResource Gray-4}"
-                           Classes="code_text"
-                           Text="Host" />
-            </StackPanel>
+                    <TextBlock Margin="0,5,0,0"
+                               TextTrimming="CharacterEllipsis"
+                               ToolTip.Tip="{Binding ServerOptions.Host}"
+                               FontSize="12"
+                               Foreground="{DynamicResource Gray-3}"
+                               Classes="code_text"
+                               Text="Host" />
+                </StackPanel>
 
-            <!-- The Buttons -->
-            <StackPanel Grid.Column="1"
-                        Orientation="Horizontal"
-                        IsVisible="{Binding Path=IsPointerOver, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}">
+                <!-- The Buttons -->
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal"
+                            IsVisible="{Binding Path=IsPointerOver, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}">
 
-                <Button Classes="tool_bar_button"
-                        ToolTip.Tip="Delete item"
-                        Command="{Binding OwnerPage.Items.RemoveItem}"
-                        CommandParameter="{Binding .}">
-                    <PathIcon Data="{StaticResource delete_regular}" />
-                </Button>
+                    <Button Classes="tool_bar_button"
+                            ToolTip.Tip="Delete item"
+                            Command="{Binding OwnerPage.Items.RemoveItem}"
+                            CommandParameter="{Binding .}">
+                        <PathIcon Data="{StaticResource delete_regular}" />
+                    </Button>
 
-            </StackPanel>
-        </Grid>
+                </StackPanel>
+            </Grid>
+        </Border>
+
     </DataTemplate>
 </ResourceDictionary>

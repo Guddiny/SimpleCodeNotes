@@ -32,7 +32,12 @@
         <Setter Property="Background" Value="{DynamicResource Gray-2}"/>
     </Style>
 
-    
+    <Style Selector="ListBox.notes_list > ListBoxItem">
+        <Setter Property="BorderThickness" Value="0 1 0 0"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Gray-9}"/>
+    </Style>
+
+
     <Style Selector="ComboBox.tool_bar_combo_box">
         <Setter Property="BorderThickness"
                 Value="0" />
@@ -44,6 +49,8 @@
 
     <Styles.Resources>
         <x:Double x:Key="ComboBoxMinHeight">26</x:Double>
+        <x:Double x:Key="TextControlThemeMinHeight">26</x:Double>
+        <Thickness x:Key="TextControlThemePadding">4,1,6,1</Thickness>
     </Styles.Resources>
 
     <Style Selector="TextBox">
@@ -51,5 +58,9 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
     </Style>
-    
+
+    <Style Selector="PathIcon">
+        <Setter Property="Height" Value="15"/>
+    </Style>
+
 </Styles>
