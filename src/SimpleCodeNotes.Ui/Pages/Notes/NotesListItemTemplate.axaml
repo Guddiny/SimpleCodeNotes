@@ -20,9 +20,9 @@
                                TextTrimming="CharacterEllipsis"
                                ToolTip.Tip="{Binding ServerOptions.Host}"
                                FontSize="12"
-                               Foreground="{DynamicResource Gray-3}"
+                               Foreground="{DynamicResource Gray-10}"
                                Classes="code_text"
-                               Text="Host" />
+                               Text="Tags:" />
                 </StackPanel>
 
                 <!-- The Buttons -->

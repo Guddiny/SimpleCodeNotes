@@ -8,6 +8,7 @@
     <SolidColorBrush x:Key="Gray-7">#393939</SolidColorBrush>
     <SolidColorBrush x:Key="Gray-8">#4d5052</SolidColorBrush>
     <SolidColorBrush x:Key="Gray-9">#5f6264</SolidColorBrush>
+    <SolidColorBrush x:Key="Gray-10">#929292</SolidColorBrush>
     
     
     <SolidColorBrush x:Key="Black-1">Black</SolidColorBrush>

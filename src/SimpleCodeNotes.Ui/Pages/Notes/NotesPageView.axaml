@@ -112,6 +112,8 @@
             </Grid>
 
             <avalonEdit:TextEditor
+                x:Name="Editor"
+                SyntaxHighlighting="XML"
                 Background="{DynamicResource Gray-7}"
                 Grid.Row="1"/>
 
