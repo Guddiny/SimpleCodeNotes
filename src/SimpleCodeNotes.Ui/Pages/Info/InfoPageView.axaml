@@ -25,12 +25,12 @@
             <TextBox Text="{Binding AppSettings.WindowSettings.Height}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Height:"/>
+            <Label Content="Database file path:"/>
             <TextBox Text="{Binding AppSettings.DatabaseSettings.DatabaseFilePath}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Label Content="Database File Path:"/>
-            <TextBox Text="{Binding AppSettings.DatabaseSettings.DatabaseFilePath}"/>
+            <Label Content="Database password:"/>
+            <TextBox Text="{Binding AppSettings.DatabaseSettings.DatabasePassword}"/>
         </StackPanel>
     </StackPanel>
 

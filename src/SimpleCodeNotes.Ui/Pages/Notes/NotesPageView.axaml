@@ -34,7 +34,8 @@
                         x:Name="Filter"
                         Grid.Column="0"
                         Grid.ColumnSpan="2"
-                        TextWrapping="NoWrap"/>
+                        TextWrapping="NoWrap"
+                        Watermark="Filter"/>
                     <Button
                         Grid.Column="1"
                         IsVisible="{Binding #Filter.Text, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
@@ -47,7 +48,16 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Stretch"
                     HorizontalContentAlignment="Center">
-                    Add Note
+                    <StackPanel
+                        Orientation="Horizontal"
+                        Spacing="15">
+                        <PathIcon 
+                            Data="{StaticResource add_square_regular}"
+                            VerticalAlignment="Center"/>
+                        <TextBlock 
+                            Text="Add note"
+                            VerticalAlignment="Center"/>
+                    </StackPanel>
                 </Button>
             </StackPanel>
 
@@ -57,6 +67,7 @@
                 Background="Transparent"
                 ItemTemplate="{StaticResource NotesListItemTemplate}"
                 Items="{Binding Notes}"
+                VirtualizationMode="Simple"
                 x:Name="PART_Items" />
 
         </Grid>
@@ -74,11 +85,13 @@
                 Grid.Row="0"
                 ColumnDefinitions="*, Auto">
 
+                <TextBox Text="Header"/>
+
                 <StackPanel
                     Grid.Column="1"
                     Spacing="3"
                     Orientation="Horizontal">
-                    <Label 
+                    <Label
                         Content="Format:"
                         VerticalContentAlignment="Center"/>
                     <ComboBox
@@ -88,8 +101,9 @@
                     </ComboBox>
                     <Button
                         HotKey="Ctrl+S"
-                        Command="{Binding Save}">
-                        <PathIcon Data="{StaticResource save_regular}" Height="15"/>
+                        Command="{Binding Save}"
+                        ToolTip.Tip="Save">
+                        <PathIcon Data="{StaticResource save_regular}" />
                     </Button>
                 </StackPanel>
 

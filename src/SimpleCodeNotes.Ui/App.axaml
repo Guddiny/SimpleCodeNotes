@@ -8,6 +8,7 @@
         <StyleInclude Source="/Styles/Sidebar.axaml" />
         <StyleInclude Source="/Styles/ToolBar.axaml" />
         <StyleInclude Source="/Styles/Text.axaml" />
+        <StyleInclude Source="/Styles/Button.axaml" />
         <!--<StyleInclude Source="avares://Avalonia.Themes.Fluent/DensityStyles/Compact.xaml" />-->
         <!--<StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml" />
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml" />-->

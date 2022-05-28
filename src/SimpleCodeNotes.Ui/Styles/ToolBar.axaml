@@ -32,6 +32,7 @@
         <Setter Property="Background" Value="{DynamicResource Gray-2}"/>
     </Style>
 
+    
     <Style Selector="ComboBox.tool_bar_combo_box">
         <Setter Property="BorderThickness"
                 Value="0" />
@@ -40,4 +41,15 @@
         <Setter Property="Margin"
                 Value="0" />
     </Style>
+
+    <Styles.Resources>
+        <x:Double x:Key="ComboBoxMinHeight">26</x:Double>
+    </Styles.Resources>
+
+    <Style Selector="TextBox">
+        <Setter Property="CornerRadius" Value="3"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+    </Style>
+    
 </Styles>

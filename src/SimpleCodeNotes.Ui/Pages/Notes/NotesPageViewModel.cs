@@ -2,6 +2,7 @@
 using ReactiveUI;
 using SimpleCodeNotes.DataAccess.Entities;
 using SimpleCodeNotes.Ui.Common;
+using System.Linq;
 using System.Reactive;
 
 namespace SimpleCodeNotes.Ui.Pages.Notes;
@@ -15,17 +16,13 @@ public class NotesPageViewModel : ViewModelBase
 
     public ReactiveCommand<Unit, Unit> Save { get; set; }
 
-    public AvaloniaList<Note> Notes { get; set; } = new()
-    {
-        new()
+    public AvaloniaList<Note> Notes { get; set; } = new(Enumerable
+        .Range(1, 100)
+        .Select(i => new Note
         {
-            Name = "Note 1"
-        },
-        new()
-        {
-            Name = "Note 2"
-        }
-    };
+            Name = "Namea sd+as a+sd+a s+d+ a+sd+ " + i,
+        })
+        .ToList());
 
     private void Print()
     {
