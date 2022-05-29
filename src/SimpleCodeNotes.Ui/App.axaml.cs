@@ -25,6 +25,7 @@ public partial class App : Application
             .AddSingleton<NotesPageViewModel>()
             .AddSingleton<SettingsPageViewModel>()
             .AddSingleton<InfoPageViewModel>()
+            .AddDataAccess(appSettings.DatabaseSettings.DatabaseFilePath)
             .BuildServiceProvider();
 
         DataTemplates.Add(new ViewLocator());

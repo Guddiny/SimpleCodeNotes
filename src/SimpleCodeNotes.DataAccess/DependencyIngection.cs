@@ -2,11 +2,11 @@
 using SimpleCodeNotes.DataAccess.Repositories;
 
 namespace SimpleCodeNotes.DataAccess;
-internal static class DependencyIngection
+public static class DependencyIngection
 {
-    public static IServiceCollection AddDataAccess(this IServiceCollection services)
+    public static IServiceCollection AddDataAccess(this IServiceCollection services, string pathToDatabase)
     {
         return services
-            .AddSingleton<ICodeNoteRepository>();
+            .AddSingleton<ICodeNoteRepository>(new CodeNoteRepository(pathToDatabase));
     }
 }

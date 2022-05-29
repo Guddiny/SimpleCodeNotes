@@ -2,6 +2,6 @@
 
 namespace SimpleCodeNotes.Ui.Pages.Settings;
 
-public class SettingsPageViewModel : ViewModelBase
+public class SettingsPageViewModel : BaseViewModel
 {
 }

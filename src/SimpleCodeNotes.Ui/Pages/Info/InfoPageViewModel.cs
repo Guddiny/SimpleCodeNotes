@@ -3,7 +3,7 @@ using SimpleCodeNotes.Ui.Settings;
 
 namespace SimpleCodeNotes.Ui.Pages.Info;
 
-public class InfoPageViewModel : ViewModelBase
+public class InfoPageViewModel : BaseViewModel
 {
     public InfoPageViewModel(AppSettings appSettings)
     {

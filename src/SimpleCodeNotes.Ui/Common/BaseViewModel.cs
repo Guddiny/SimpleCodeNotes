@@ -2,6 +2,6 @@
 
 namespace SimpleCodeNotes.Ui.Common;
 
-public class ViewModelBase : ReactiveObject
+public class BaseViewModel : ReactiveObject
 {
 }

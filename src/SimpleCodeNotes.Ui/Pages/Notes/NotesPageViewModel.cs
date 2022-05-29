@@ -1,28 +1,31 @@
-﻿using Avalonia.Collections;
-using ReactiveUI;
+﻿using ReactiveUI;
 using SimpleCodeNotes.DataAccess.Entities;
+using SimpleCodeNotes.DataAccess.Repositories;
 using SimpleCodeNotes.Ui.Common;
-using System.Linq;
 using System.Reactive;
 
 namespace SimpleCodeNotes.Ui.Pages.Notes;
 
-public class NotesPageViewModel : ViewModelBase
+public class NotesPageViewModel : BaseViewModel
 {
-    public NotesPageViewModel()
+    private readonly ICodeNoteRepository _repository;
+
+    public NotesPageViewModel(ICodeNoteRepository repository)
     {
+        _repository = repository;
+
         Save = ReactiveCommand.Create(Print);
+
+        var notes = _repository.GetNotes();
+
+        Notes.Collection.AddRange(_repository.GetNotes());
     }
 
     public ReactiveCommand<Unit, Unit> Save { get; set; }
 
-    public AvaloniaList<Note> Notes { get; set; } = new(Enumerable
-        .Range(1, 4)
-        .Select(i => new Note
-        {
-            Name = "Namea sd+as a+sd+a s+d+ a+sd+ " + i,
-        })
-        .ToList());
+    public PageItemsViewModel<Note> Notes { get; set; } = new();
+
+    public Note? SelectedNote { get; set; }
 
     private void Print()
     {

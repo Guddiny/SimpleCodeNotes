@@ -51,10 +51,10 @@
                     <StackPanel
                         Orientation="Horizontal"
                         Spacing="15">
-                        <PathIcon 
+                        <PathIcon
                             Data="{StaticResource add_square_regular}"
                             VerticalAlignment="Center"/>
-                        <TextBlock 
+                        <TextBlock
                             Text="Add note"
                             VerticalAlignment="Center"/>
                     </StackPanel>
@@ -66,7 +66,8 @@
                 Classes="notes_list"
                 Background="Transparent"
                 ItemTemplate="{StaticResource NotesListItemTemplate}"
-                Items="{Binding Notes}"
+                Items="{Binding Notes.Collection}"
+                SelectedItem="{Binding Notes.SelectedItem}"
                 VirtualizationMode="Simple"
                 x:Name="PART_Items" />
 
@@ -85,7 +86,7 @@
                 Grid.Row="0"
                 ColumnDefinitions="*, Auto">
 
-                <TextBox Text="Header"/>
+                <TextBox Text="{Binding Notes.SelectedItem.Name}"/>
 
                 <StackPanel
                     Grid.Column="1"

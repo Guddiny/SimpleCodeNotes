@@ -1,6 +1,6 @@
 ﻿namespace SimpleCodeNotes.DataAccess.Entities;
 
-public class Note
+public class Note : BaseEntity
 {
     public string Name { get; set; } = string.Empty;
 
@@ -13,8 +13,4 @@ public class Note
     public List<string> Tags { get; set; } = new();
 
     public string Content { get; set; } = string.Empty;
-
-    public DateTime Created { get; set; }
-
-    public DateTime Updated { get; set; }
 }

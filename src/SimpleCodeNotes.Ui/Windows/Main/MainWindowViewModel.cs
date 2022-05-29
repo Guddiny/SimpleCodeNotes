@@ -6,7 +6,7 @@ using SimpleCodeNotes.Ui.Settings;
 
 namespace SimpleCodeNotes.Ui.Windows.Main;
 
-public class MainWindowViewModel : ViewModelBase
+public class MainWindowViewModel : BaseViewModel
 {
     public MainWindowViewModel(
         AppSettings appSettings,
