@@ -15,7 +15,7 @@ public partial class NotesPageView : UserControl
     private readonly TextEditor _textEditor;
     private readonly Installation _textMateInstallation;
     private RegistryOptions _registryOptions;
-    private int _currentTheme = (int)ThemeName.DimmedMonokai;
+    private int _currentTheme = (int)ThemeName.DarkPlus;
 
     public NotesPageView()
     {

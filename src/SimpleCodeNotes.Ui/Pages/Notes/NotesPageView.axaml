@@ -94,15 +94,22 @@
                     Orientation="Horizontal"
                     VerticalAlignment="Bottom">
                     <Label
+                        Content="Id:"
+                        VerticalContentAlignment="Center"/>
+                    <Label
+                        Content="{Binding Notes.SelectedItem.Id}"
+                        VerticalContentAlignment="Center"
+                        FontWeight="SemiBold"/>
+
+                    <Label
                         Content="Format:"
                         VerticalContentAlignment="Center"/>
                     <ComboBox
                         Classes="tool_bar_combo_box"
                         VerticalAlignment="Bottom"
                         SelectedItem="{Binding Notes.SelectedItem.Syntax}"
-                        Items="{Binding SupportedTypes}">
-                       
-                    </ComboBox>
+                        Items="{Binding SupportedTypes}"/>
+
                     <Button
                         HotKey="Ctrl+S"
                         Command="{Binding Save}"
@@ -118,6 +125,23 @@
                 SyntaxHighlighting="XML"
                 Background="{DynamicResource Gray-7}"
                 Grid.Row="1"/>
+
+            <Border
+                Height="23"
+                Width="60"
+                CornerRadius="3"
+                Grid.Row="1"
+                Background="#55c993"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0 0 5 5"
+                IsVisible="{Binding IsSaveIndicatorVisible}">
+                <Label
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    Foreground="White"
+                    Content="Saved"/>
+            </Border>
 
             <!--<main:TextEditor Grid.Row="1"></main:TextEditor>-->
 

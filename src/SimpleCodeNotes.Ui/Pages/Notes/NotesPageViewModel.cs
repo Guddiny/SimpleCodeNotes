@@ -3,13 +3,16 @@ using ReactiveUI;
 using SimpleCodeNotes.DataAccess.Repositories;
 using SimpleCodeNotes.Ui.Common;
 using SimpleCodeNotes.Ui.Mapping;
+using System;
 using System.Reactive;
+using System.Threading.Tasks;
 
 namespace SimpleCodeNotes.Ui.Pages.Notes;
 
 public class NotesPageViewModel : BaseViewModel
 {
     private readonly ICodeNoteRepository _repository;
+    private bool _isSaveIndicatorVisible;
 
     public NotesPageViewModel(ICodeNoteRepository repository)
     {
@@ -30,15 +33,25 @@ public class NotesPageViewModel : BaseViewModel
         // });
     }
 
-    public ReactiveCommand<Unit, Unit> Save { get; set; }
+    public ReactiveCommand<Unit, Task> Save { get; set; }
 
     public PageItemsViewModel<NoteViewModel> Notes { get; set; } = new();
 
     public AvaloniaList<string> SupportedTypes { get; set; } = new() { "json", "cs" };
 
+    public bool IsSaveIndicatorVisible
+    {
+        get => _isSaveIndicatorVisible;
+        set => this.RaiseAndSetIfChanged(ref _isSaveIndicatorVisible, value);
+    }
+
     public NoteViewModel? SelectedNote { get; set; }
 
-    private void Print()
+    private async Task Print()
     {
+        // Save data into database
+        IsSaveIndicatorVisible = true;
+        await Task.Delay(TimeSpan.FromMilliseconds(500));
+        IsSaveIndicatorVisible = false;
     }
 }
