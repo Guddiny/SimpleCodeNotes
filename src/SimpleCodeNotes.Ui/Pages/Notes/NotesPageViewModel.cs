@@ -37,15 +37,13 @@ public class NotesPageViewModel : BaseViewModel
 
     public PageItemsViewModel<NoteViewModel> Notes { get; set; } = new();
 
-    public AvaloniaList<string> SupportedTypes { get; set; } = new() { "json", "cs" };
+    public NoteViewModel? SelectedNote { get; set; }
 
     public bool IsSaveIndicatorVisible
     {
         get => _isSaveIndicatorVisible;
         set => this.RaiseAndSetIfChanged(ref _isSaveIndicatorVisible, value);
     }
-
-    public NoteViewModel? SelectedNote { get; set; }
 
     private async Task Print()
     {

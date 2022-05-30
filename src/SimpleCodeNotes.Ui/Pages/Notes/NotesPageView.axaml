@@ -105,10 +105,10 @@
                         Content="Format:"
                         VerticalContentAlignment="Center"/>
                     <ComboBox
+                        x:Name="SupportedSyntax"
                         Classes="tool_bar_combo_box"
                         VerticalAlignment="Bottom"
-                        SelectedItem="{Binding Notes.SelectedItem.Syntax}"
-                        Items="{Binding SupportedTypes}"/>
+                        SelectedItem="{Binding Notes.SelectedItem.Syntax}"/>
 
                     <Button
                         HotKey="Ctrl+S"
