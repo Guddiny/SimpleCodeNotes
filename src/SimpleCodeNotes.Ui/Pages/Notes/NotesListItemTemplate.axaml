@@ -1,9 +1,9 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:notes="clr-namespace:SimpleCodeNotes.DataAccess.Entities;assembly=SimpleCodeNotes.DataAccess">
+                    xmlns:notes="clr-namespace:SimpleCodeNotes.Ui.Pages.Notes;assembly=SimpleCodeNotes.Ui">
 
     <DataTemplate x:Key="NotesListItemTemplate"
-                   DataType="{x:Type notes:Note}">
+                   DataType="{x:Type notes:NoteViewModel}">
 
         <Border>
             <Grid ColumnDefinitions="*,Auto"

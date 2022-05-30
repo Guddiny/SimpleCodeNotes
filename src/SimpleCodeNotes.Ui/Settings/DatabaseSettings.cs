@@ -2,7 +2,7 @@
 
 public class DatabaseSettings
 {
-    public string DatabaseFilePath { get; set; } = string.Empty;
+    public string DatabaseFilePath { get; set; } = @"C:\Temp\CodeNote.db";
 
     public string DatabasePassword { get; set; } = string.Empty;
 }

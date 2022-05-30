@@ -28,4 +28,13 @@ internal class CodeNoteRepository : ICodeNoteRepository
             return result;
         }
     }
+
+    public void Init(Note note)
+    {
+        using (var db = new LiteDatabase(_connectionString))
+        {
+            var collection = db.GetCollection<Note>(NotesConnectionName);
+            collection.Insert(note);
+        }
+    }
 }

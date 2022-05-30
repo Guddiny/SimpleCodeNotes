@@ -98,9 +98,10 @@
                         VerticalContentAlignment="Center"/>
                     <ComboBox
                         Classes="tool_bar_combo_box"
-                        VerticalAlignment="Bottom">
-                        <ComboBoxItem>JSON</ComboBoxItem>
-                        <ComboBoxItem>YAML</ComboBoxItem>
+                        VerticalAlignment="Bottom"
+                        SelectedItem="{Binding Notes.SelectedItem.Syntax}"
+                        Items="{Binding SupportedTypes}">
+                       
                     </ComboBox>
                     <Button
                         HotKey="Ctrl+S"
