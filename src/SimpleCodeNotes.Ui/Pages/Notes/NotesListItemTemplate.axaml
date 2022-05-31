@@ -37,7 +37,7 @@
 
                     <Button Classes="tool_bar_button"
                             ToolTip.Tip="Delete item"
-                            Command="{Binding Notes.RemoveItem, RelativeSource={RelativeSource TemplatedParent}}"
+                            Command="{Binding Test, RelativeSource={RelativeSource TemplatedParent}}"
                             CommandParameter="{Binding .}">
                         <PathIcon Data="{StaticResource delete_regular}" />
                     </Button>

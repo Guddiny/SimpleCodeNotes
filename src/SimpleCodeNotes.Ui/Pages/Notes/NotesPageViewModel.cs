@@ -37,15 +37,13 @@ public class NotesPageViewModel : BaseViewModel
 
     public PageItemsViewModel<NoteViewModel> Notes { get; set; } = new();
 
-    public NoteViewModel? SelectedNote { get; set; }
-
     public bool IsSaveIndicatorVisible
     {
         get => _isSaveIndicatorVisible;
         set => this.RaiseAndSetIfChanged(ref _isSaveIndicatorVisible, value);
     }
 
-    private async Task Print()
+    public async Task Print()
     {
         // Save data into database
         IsSaveIndicatorVisible = true;

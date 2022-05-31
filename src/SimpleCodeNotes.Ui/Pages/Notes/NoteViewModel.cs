@@ -66,4 +66,8 @@ public class NoteViewModel : BaseViewModel
     }
 
     public AvaloniaList<string> Tags { get; set; } = new();
+
+    public void Test()
+    {
+    }
 }

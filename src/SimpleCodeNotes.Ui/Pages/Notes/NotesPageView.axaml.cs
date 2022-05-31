@@ -48,8 +48,6 @@ public partial class NotesPageView : UserControl
 
         // _textEditor.Document = new TextDocument(ResourceLoader.LoadSampleFile(scopeName));
         _textMateInstallation.SetGrammar(scopeName);
-
-        e.Handled = true;
     }
 
     private void InitializeComponent()
