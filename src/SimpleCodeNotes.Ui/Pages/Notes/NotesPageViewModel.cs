@@ -1,11 +1,11 @@
-﻿using Avalonia.Collections;
+﻿using System;
+using System.Reactive;
+using System.Threading.Tasks;
+using Avalonia.Collections;
 using ReactiveUI;
 using SimpleCodeNotes.DataAccess.Repositories;
 using SimpleCodeNotes.Ui.Common;
 using SimpleCodeNotes.Ui.Mapping;
-using System;
-using System.Reactive;
-using System.Threading.Tasks;
 
 namespace SimpleCodeNotes.Ui.Pages.Notes;
 

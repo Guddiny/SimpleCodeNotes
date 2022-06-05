@@ -1,6 +1,6 @@
-﻿using Avalonia.Controls;
+﻿using System;
+using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using System;
 
 namespace SimpleCodeNotes.Ui.Common;
 
@@ -13,8 +13,7 @@ public class ViewLocator : IDataTemplate
 
         if (viewType != null)
         {
-            var control = Activator.CreateInstance(viewType) as Control;
-            if (control == null)
+            if (Activator.CreateInstance(viewType) is not Control control)
             {
                 throw new InvalidOperationException($"Unable to create view of type '{viewType.FullName}'.");
             }

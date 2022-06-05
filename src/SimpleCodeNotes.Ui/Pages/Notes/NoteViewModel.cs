@@ -1,8 +1,8 @@
-﻿using Avalonia.Collections;
+﻿using System;
+using Avalonia.Collections;
 using LiteDB;
 using ReactiveUI;
 using SimpleCodeNotes.Ui.Common;
-using System;
 
 namespace SimpleCodeNotes.Ui.Pages.Notes;
 

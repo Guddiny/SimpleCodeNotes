@@ -1,6 +1,6 @@
-﻿using SimpleCodeNotes.Ui.Settings;
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
+using SimpleCodeNotes.Ui.Settings;
 
 namespace SimpleCodeNotes.Ui.Services;
 

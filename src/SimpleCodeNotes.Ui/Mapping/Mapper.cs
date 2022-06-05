@@ -1,7 +1,7 @@
-﻿using Avalonia.Collections;
+﻿using System.Collections.Generic;
+using Avalonia.Collections;
 using SimpleCodeNotes.DataAccess.Entities;
 using SimpleCodeNotes.Ui.Pages.Notes;
-using System.Collections.Generic;
 
 namespace SimpleCodeNotes.Ui.Mapping;
 
