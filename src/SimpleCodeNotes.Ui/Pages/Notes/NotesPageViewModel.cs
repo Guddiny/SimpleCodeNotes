@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reactive;
 using System.Threading.Tasks;
-using Avalonia.Collections;
 using ReactiveUI;
 using SimpleCodeNotes.DataAccess.Repositories;
 using SimpleCodeNotes.Ui.Common;
@@ -18,22 +17,16 @@ public class NotesPageViewModel : BaseViewModel
     {
         _repository = repository;
 
-        Save = ReactiveCommand.Create(Print);
+        SaveCmd = ReactiveCommand.Create(Save);
+        AddNewNoteCmd = ReactiveCommand.Create(AddNewNote);
 
         var notes = _repository.GetNotes();
         Notes.Collection.AddRange(_repository.GetNotes().ToViewModel());
-
-        // _repository.Init(new Note
-        // {
-        //    Name = "Test tote",
-        //    Content = "{\"Name\" : \"Alex\"}",
-        //    Syntax = "json",
-        //    Workspace = "My workspace",
-        //    Tags = new() { "JSON", "Text" }
-        // });
     }
 
-    public ReactiveCommand<Unit, Task> Save { get; set; }
+    public ReactiveCommand<Unit, Task> SaveCmd { get; set; }
+
+    public ReactiveCommand<Unit, Unit> AddNewNoteCmd { get; set; }
 
     public PageItemsViewModel<NoteViewModel> Notes { get; set; } = new();
 
@@ -43,11 +36,23 @@ public class NotesPageViewModel : BaseViewModel
         set => this.RaiseAndSetIfChanged(ref _isSaveIndicatorVisible, value);
     }
 
-    public async Task Print()
+    public async Task Save()
     {
         // Save data into database
         IsSaveIndicatorVisible = true;
         await Task.Delay(TimeSpan.FromMilliseconds(500));
         IsSaveIndicatorVisible = false;
+    }
+
+    public void AddNewNote()
+    {
+        var note = new NoteViewModel
+        {
+            Name = "New note",
+            Syntax = "Markdown (markdown)"
+        };
+
+        Notes.Collection.Add(note);
+        Notes.SelectedItem = note;
     }
 }

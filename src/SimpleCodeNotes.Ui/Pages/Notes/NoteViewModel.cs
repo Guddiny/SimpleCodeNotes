@@ -16,6 +16,7 @@ public class NoteViewModel : BaseViewModel
     private string _content = string.Empty;
     private DateTime _created;
     private DateTime _updated;
+    private bool _isSaved;
 
     public ObjectId Id
     {
@@ -63,6 +64,12 @@ public class NoteViewModel : BaseViewModel
     {
         get => _updated;
         set => this.RaiseAndSetIfChanged(ref _updated, value);
+    }
+
+    public bool IsSaved
+    {
+        get => _isSaved;
+        set => this.RaiseAndSetIfChanged(ref _isSaved, value);
     }
 
     public AvaloniaList<string> Tags { get; set; } = new();

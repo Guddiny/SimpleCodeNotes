@@ -47,7 +47,8 @@
                 <Button
                     VerticalAlignment="Center"
                     HorizontalAlignment="Stretch"
-                    HorizontalContentAlignment="Center">
+                    HorizontalContentAlignment="Center"
+                    Command="{Binding AddNewNoteCmd}">
                     <StackPanel
                         Orientation="Horizontal"
                         Spacing="15">
@@ -112,7 +113,7 @@
 
                     <Button
                         HotKey="Ctrl+S"
-                        Command="{Binding Save}"
+                        Command="{Binding SaveCmd}"
                         ToolTip.Tip="Save">
                         <PathIcon Data="{StaticResource save_regular}" />
                     </Button>

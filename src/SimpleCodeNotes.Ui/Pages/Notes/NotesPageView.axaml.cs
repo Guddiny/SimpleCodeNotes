@@ -14,7 +14,7 @@ public partial class NotesPageView : UserControl
     private readonly TextEditor _textEditor;
     private readonly ComboBox _syntaxList;
     private readonly Installation _textMateInstallation;
-    private RegistryOptions _registryOptions;
+    private readonly RegistryOptions _registryOptions;
 
     public NotesPageView()
     {
