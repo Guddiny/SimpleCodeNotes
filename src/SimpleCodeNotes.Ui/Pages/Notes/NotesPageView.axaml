@@ -108,6 +108,7 @@
                     <ComboBox
                         x:Name="SupportedSyntax"
                         Classes="tool_bar_combo_box"
+                        Items="{Binding SupportedSyntaxes}"
                         VerticalAlignment="Bottom"
                         SelectedItem="{Binding Notes.SelectedItem.Syntax}"/>
 

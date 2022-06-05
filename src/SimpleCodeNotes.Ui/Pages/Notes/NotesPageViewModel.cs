@@ -1,16 +1,20 @@
 ﻿using System;
+using System.Linq;
 using System.Reactive;
 using System.Threading.Tasks;
+using Avalonia.Collections;
 using ReactiveUI;
 using SimpleCodeNotes.DataAccess.Repositories;
 using SimpleCodeNotes.Ui.Common;
 using SimpleCodeNotes.Ui.Mapping;
+using TextMateSharp.Grammars;
 
 namespace SimpleCodeNotes.Ui.Pages.Notes;
 
 public class NotesPageViewModel : BaseViewModel
 {
     private readonly ICodeNoteRepository _repository;
+    private readonly RegistryOptions _registryOptions;
     private bool _isSaveIndicatorVisible;
 
     public NotesPageViewModel(ICodeNoteRepository repository)
@@ -19,6 +23,9 @@ public class NotesPageViewModel : BaseViewModel
 
         SaveCmd = ReactiveCommand.Create(Save);
         AddNewNoteCmd = ReactiveCommand.Create(AddNewNote);
+
+        _registryOptions = new RegistryOptions(ThemeName.DarkPlus);
+        SupportedSyntaxes.AddRange(_registryOptions.GetAvailableLanguages().Select(l => l.Id));
 
         var notes = _repository.GetNotes();
         Notes.Collection.AddRange(_repository.GetNotes().ToViewModel());
@@ -30,13 +37,15 @@ public class NotesPageViewModel : BaseViewModel
 
     public PageItemsViewModel<NoteViewModel> Notes { get; set; } = new();
 
+    public AvaloniaList<string> SupportedSyntaxes { get; set; } = new();
+
     public bool IsSaveIndicatorVisible
     {
         get => _isSaveIndicatorVisible;
         set => this.RaiseAndSetIfChanged(ref _isSaveIndicatorVisible, value);
     }
 
-    public async Task Save()
+    private async Task Save()
     {
         // Save data into database
         IsSaveIndicatorVisible = true;
@@ -44,12 +53,12 @@ public class NotesPageViewModel : BaseViewModel
         IsSaveIndicatorVisible = false;
     }
 
-    public void AddNewNote()
+    private void AddNewNote()
     {
         var note = new NoteViewModel
         {
             Name = "New note",
-            Syntax = "Markdown (markdown)"
+            Syntax = "markdown"
         };
 
         Notes.Collection.Add(note);

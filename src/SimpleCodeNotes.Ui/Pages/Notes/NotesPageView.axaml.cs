@@ -29,7 +29,8 @@ public partial class NotesPageView : UserControl
         _textEditor.TextArea.RightClickMovesCaret = true;
 
         _registryOptions = new RegistryOptions(ThemeName.DarkPlus);
-        _syntaxList.Items = _registryOptions.GetAvailableLanguages();
+
+        // _syntaxList.Items = _registryOptions.GetAvailableLanguages();
         _syntaxList.SelectionChanged += SyntaxList_SelectionChanged;
 
         _textMateInstallation = _textEditor.InstallTextMate(_registryOptions);
@@ -41,8 +42,8 @@ public partial class NotesPageView : UserControl
 
     private void SyntaxList_SelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
-        var language = (Language)_syntaxList.SelectedItem!;
-        string scopeName = _registryOptions.GetScopeByLanguageId(language.Id);
+        var languageId = _syntaxList.SelectedItem as string;
+        string scopeName = _registryOptions.GetScopeByLanguageId(languageId);
 
         _textMateInstallation.SetGrammar(null);
 
