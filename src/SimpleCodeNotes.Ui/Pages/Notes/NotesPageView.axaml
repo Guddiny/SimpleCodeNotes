@@ -126,6 +126,7 @@
                 x:Name="Editor"
                 SyntaxHighlighting="XML"
                 Background="{DynamicResource Gray-7}"
+                Document="{Binding Content.Document}"
                 Grid.Row="1"/>
 
             <Border

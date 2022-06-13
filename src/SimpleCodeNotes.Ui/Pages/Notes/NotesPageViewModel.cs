@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reactive;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Avalonia.Collections;
 using ReactiveUI;
@@ -16,6 +17,7 @@ public class NotesPageViewModel : BaseViewModel
     private readonly ICodeNoteRepository _repository;
     private readonly RegistryOptions _registryOptions;
     private bool _isSaveIndicatorVisible;
+    private ContentViewModel _content = new();
 
     public NotesPageViewModel(ICodeNoteRepository repository)
     {
@@ -27,8 +29,14 @@ public class NotesPageViewModel : BaseViewModel
         _registryOptions = new RegistryOptions(ThemeName.DarkPlus);
         SupportedSyntaxes.AddRange(_registryOptions.GetAvailableLanguages().Select(l => l.Id));
 
-        var notes = _repository.GetNotes();
-        Notes.Collection.AddRange(_repository.GetNotes().ToViewModel());
+        Notes.Collection.AddRange(_repository.GetMetadata().ToViewModel());
+
+        this.WhenAnyValue(x => x.Notes.SelectedItem)
+            .WhereNotNull()
+            .Subscribe(i =>
+            {
+                Content.Document.Text = _repository.GetContent(i.Id)?.Text ?? string.Empty;
+            });
     }
 
     public ReactiveCommand<Unit, Task> SaveCmd { get; set; }
@@ -43,6 +51,12 @@ public class NotesPageViewModel : BaseViewModel
     {
         get => _isSaveIndicatorVisible;
         set => this.RaiseAndSetIfChanged(ref _isSaveIndicatorVisible, value);
+    }
+
+    public ContentViewModel Content
+    {
+        get => _content;
+        set => this.RaiseAndSetIfChanged(ref _content, value);
     }
 
     private async Task Save()

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using Avalonia.Collections;
+using Microsoft.CodeAnalysis;
+using SimpleCodeNotes.DataAccess.Dto;
 using SimpleCodeNotes.DataAccess.Entities;
 using SimpleCodeNotes.Ui.Pages.Notes;
 
@@ -7,27 +9,26 @@ namespace SimpleCodeNotes.Ui.Mapping;
 
 public static class Mapper
 {
-    public static NoteViewModel ToViewModel(this Note note)
+    public static NoteViewModel ToViewModel(this MetadataDto metadata)
     {
         return new()
         {
-            Id = note.Id,
-            Description = note.Description,
-            Content = note.Content,
-            Syntax = note.Syntax,
-            Created = note.Created,
-            Updated = note.Updated,
-            Name = note.Name,
-            Workspace = note.Workspace,
-            Tags = new AvaloniaList<string>(note.Tags)
+            Id = metadata.Id,
+            Description = metadata.Description,
+            Syntax = metadata.Syntax,
+            Created = metadata.Created,
+            Updated = metadata.Updated,
+            Name = metadata.Name,
+            Workspace = metadata.Workspace,
+            Tags = new AvaloniaList<string>(metadata.Tags)
         };
     }
 
-    public static AvaloniaList<NoteViewModel> ToViewModel(this List<Note> notes)
+    public static AvaloniaList<NoteViewModel> ToViewModel(this List<MetadataDto> metadata)
     {
         var list = new AvaloniaList<NoteViewModel>();
 
-        foreach (var note in notes)
+        foreach (var note in metadata)
         {
             list.Add(ToViewModel(note));
         }
